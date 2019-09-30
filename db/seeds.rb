@@ -13,8 +13,8 @@ require 'rest-client'
 # creates all of our questions from jService call! Thanks Randy
 response = RestClient.get("http://jservice.io/api/clues")
 response_hash = JSON.parse(response)
-binding.pry
+# binding.pry
 response_hash.each do |question|
-   Question.create( value: question["value"], category: question["category"], answer: question["answer"], question: question["question"])
+   Question.create( value: question["value"], category: question["category"]["title"], answer: question["answer"], question: question["question"])
 end
 
