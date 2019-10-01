@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
+    @user = User.create(username: params[:username], password: params[:password], cumulative_score: params[:cumulative_score])
 
     if @user.save
       render json: @user, status: :created, location: @user

@@ -18,3 +18,6 @@ response_hash.each do |question|
    Question.create( value: question["value"], category: question["category"]["title"], answer: question["answer"], question: question["question"])
 end
 
+User.create(username: 'test', password: 'test')
+User.create(username: 'test2', password: 'tset')
+

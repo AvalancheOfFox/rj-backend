@@ -6,7 +6,7 @@ class AuthController < ApplicationController
          encoded_token = encode_token(user_payload(user))
          render json: {token: encoded_token}
         else 
-            render json: {message:"Sorry, wrong Username or Password"}
+            render json: {message:"Sorry, incorrect username or password"}
         end
     
     end
